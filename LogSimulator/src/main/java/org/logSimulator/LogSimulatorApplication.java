@@ -6,7 +6,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@EnableScheduling
 @PropertySource(value = {"classpath:local/Application.properties"},
         ignoreResourceNotFound = true)
 public class LogSimulatorApplication {
