@@ -1,0 +1,4 @@
+rootProject.name = 'Transportation'
+include 'CoreModule'
+include 'LogSimulator'
+
