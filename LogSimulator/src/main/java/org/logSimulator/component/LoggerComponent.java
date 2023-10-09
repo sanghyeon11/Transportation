@@ -11,7 +11,7 @@ import java.util.Properties;
 @Configuration
 public class LoggerComponent {
 
-    @Value("${test}")
+    @Value("${log.cycle}")
     String a;
 
     @Bean
