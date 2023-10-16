@@ -1,4 +1,4 @@
-package com.example.logsimulator;
+package com.simulator.logsimulator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

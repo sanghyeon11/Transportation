@@ -5,7 +5,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.3'
 }
 
-group = 'com.example'
+group = 'com.simulator'
 version = '0.0.1-SNAPSHOT'
 
 java {
@@ -23,6 +23,9 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' // 추가
+	implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '2.0.0'
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
