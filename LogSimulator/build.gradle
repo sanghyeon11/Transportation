@@ -23,8 +23,11 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' // 추가
-	implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '2.0.0'
+	//thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+	implementation 'org.quartz-scheduler:quartz'
+	implementation 'org.springframework.boot:spring-boot-starter-quartz'
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
