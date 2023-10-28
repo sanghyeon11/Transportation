@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/CoreModule" />
             <option value="$PROJECT_DIR$/LogSimulator" />
+            <option value="$PROJECT_DIR$/Preprocessing" />
           </set>
         </option>
       </GradleProjectSettings>
