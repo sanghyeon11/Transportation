@@ -56,7 +56,7 @@ public class FileUtils {
             log.error("Failed CreateFile ", e);
             return false;
         }
-        log.info("로그 파일이 생성되었습니다: - {}", log_path);
+        //log.info("로그 파일이 생성되었습니다: - {}", log_path);
         return true;
     }
 }

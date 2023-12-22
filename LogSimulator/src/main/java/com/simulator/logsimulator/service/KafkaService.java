@@ -1,25 +1,30 @@
 package com.simulator.logsimulator.service;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.NewTopic;
+import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
+import java.util.Properties;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class KafkaService {
-    private final Producer<String, String> kafkaProducer;
-    private final AdminClient topicMaker;
+    static Producer<String, String> kafkaProducer;
 
-    @Autowired
-    public KafkaService(Producer<String, String> kafkaProducer, AdminClient topicMaker) {
-        this.kafkaProducer = kafkaProducer;
-        this.topicMaker = topicMaker;
+    static {
+        // Kafka Producer 설정
+        Properties props = new Properties();
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        kafkaProducer = new KafkaProducer<>(props);
     }
 
     public void sendMessage(String topic, String key, String value) {
@@ -40,7 +45,7 @@ public class KafkaService {
 
         // 토픽 생성
         NewTopic newTopic = new NewTopic(topicName, numPartitions, replicationFactor);
-        topicMaker.createTopics(Collections.singletonList(newTopic));
+        //topicMaker.createTopics(Collections.singletonList(newTopic));
 
         log.info("Create Topic - {}", topicName);
         return true;
