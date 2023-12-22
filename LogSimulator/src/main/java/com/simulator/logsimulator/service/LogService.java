@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.concurrent.*;
 
 @Service
-public class LogMakerService {
+public class LogService {
     /**
      * 업데이트 요망
      * temporaryMap는 임시 DTO

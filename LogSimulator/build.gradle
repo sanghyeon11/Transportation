@@ -37,6 +37,8 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	implementation 'org.json:json:20231013'
+
 	implementation project(':CoreModule')
 }
 
