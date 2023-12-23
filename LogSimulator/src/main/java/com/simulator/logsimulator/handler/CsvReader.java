@@ -3,26 +3,27 @@ package com.simulator.logsimulator.handler;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CsvReader implements LogReaderFactory{
     @Override
-    public JSONArray execute() {
+    public Map<String, JSONArray> execute() {
+        Map<String, JSONArray> map = new HashMap<>();
+        JSONArray dataArr = new JSONArray();
         JSONArray records = LogReaderFactory.readCSV("/Users/jeongsanghyeon/test/logs/bus_data_sample.csv");
 
         for (Object obj : records) {
-            if (obj instanceof JSONObject) {
-                JSONObject record = (JSONObject) obj;
-
+            if (obj instanceof JSONObject record) {
+                JSONObject formatData = new JSONObject();
                 // JSONObject의 키와 값을 출력 (원하는 작업 수행)
                 for (String key : record.keySet()) {
-                    String value = record.getString(key);
-                    System.out.println(key + ": " + value);
+                    formatData.put(LogReaderFactory.replaceKey(key), LogReaderFactory.replaceValue(record.getString(key)));
                 }
-                System.out.println();
+                dataArr.put(formatData);
             }
         }
-        return null;
+        map.put("bus", dataArr);
+        return map;
     }
 }

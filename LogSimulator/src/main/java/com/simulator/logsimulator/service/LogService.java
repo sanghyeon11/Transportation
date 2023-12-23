@@ -10,22 +10,6 @@ import java.util.concurrent.*;
 
 @Service
 public class LogService {
-    /**
-     * 업데이트 요망
-     * temporaryMap는 임시 DTO
-     * <p>
-     * 구성 - 필수 Y
-     * {
-     * type : 로그타입 (Y)
-     * s_ip : 출발지 ip (Y)
-     * e_ip : 도착지 ip
-     * s_time: 발생시간 (Y)
-     * e_time: 종료 시간
-     * raw : 로그 원본 데이터 (Y)
-     * s_country : 출발지 국가 (Y)
-     * <p>
-     * }
-     */
     static List<Map<String, Objects>> temporaryMap = new ArrayList<>();
 
     // 실행 프로세스

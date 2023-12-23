@@ -3,6 +3,7 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$USER_HOME$/Downloads/서울시 버스 30분단위 이용 통계.csv" charset="EUC-KR" />
     <file url="file://$USER_HOME$/Downloads/서울시 지하철 30분단위 이용 통계.csv" charset="EUC-KR" />
+    <file url="file://$USER_HOME$/test/logs/bus_data_sample.csv" charset="EUC-KR" />
     <file url="file://$USER_HOME$/test/logs/subway_data_sample.csv" charset="EUC-KR" />
     <file url="file://$USER_HOME$/test/logs/서울시 버스 30분단위 이용 통계.csv" charset="EUC-KR" />
   </component>
